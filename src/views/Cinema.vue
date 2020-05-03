@@ -4,26 +4,57 @@
       <div class="breadcrumb">
         <el-breadcrumb separator="/">
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-          <el-breadcrumb-item :to="{ name: 'Cinema' }">权限管理</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{ name: 'Cinema' }"
+            >权限管理</el-breadcrumb-item
+          >
           <el-breadcrumb-item>权限列表</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
       <div class="addBtn">
-        <el-button type="primary" style="border-radius: 0px;width:80px" @click="showCinemaAdd">新增</el-button>
+        <el-button
+          type="primary"
+          style="border-radius: 0px;width:80px"
+          @click="showCinemaAdd"
+          >新增</el-button
+        >
       </div>
       <div class="tablelist">
         <el-table :data="tableData" border style="width: 100%">
-          <el-table-column label="序号" width="50" type="index"></el-table-column>
-          <el-table-column prop="cinema_name" label="名称" width="150"></el-table-column>
-          <el-table-column prop="city.city_name" label="城市" width="200"></el-table-column>
-          <el-table-column prop="cinema_address" label="地址" width="200"></el-table-column>
+          <el-table-column
+            label="序号"
+            width="50"
+            type="index"
+          ></el-table-column>
+          <el-table-column
+            prop="cinema_name"
+            label="名称"
+            width="150"
+          ></el-table-column>
+          <el-table-column
+            prop="city.city_name"
+            label="城市"
+            width="200"
+          ></el-table-column>
+          <el-table-column
+            prop="cinema_address"
+            label="地址"
+            width="200"
+          ></el-table-column>
           <el-table-column label="操作" width="200">
             <template slot-scope="scope">
-              <el-button @click="updateCinema(scope.row)" type="primary" size="small">
+              <el-button
+                @click="updateCinema(scope.row)"
+                type="primary"
+                size="small"
+              >
                 <i class="el-icon-edit"></i>
                 <span>编辑</span>
               </el-button>
-              <el-button @click="deleteCinema(scope.row)" type="danger" size="small">
+              <el-button
+                @click="deleteCinema(scope.row)"
+                type="danger"
+                size="small"
+              >
                 <i class="el-icon-delete"></i>
                 <span>删除</span>
               </el-button>
